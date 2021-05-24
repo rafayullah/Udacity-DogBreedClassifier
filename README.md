@@ -101,7 +101,7 @@ The final function that is used to predict dog breeds works in following way:
 
 ## Application Dashboard
 App main page:
-![Main page](Enter dashboard picture from images/dashpoardjpg)
+![Main page](https://github.com/rafayullah/Udacity-DogBreedClassifier/blob/main/images/Dashboard_Image.png?raw=true)
 
 
 ## Authors
