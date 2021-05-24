@@ -1,7 +1,7 @@
 # Dog Breed Identification
 
 
-## Project Overview
+## Project Definition
 The project demonstrates on how transfer learning can be applied to a given problem to improve accuracy and efficieny of the models. The project utilises various concepts to prove that with limited time and resources, models can be developed. The models utilised use Imagenet dataset to train and identify the categories present in the data. We couple the trained weights with our own model as an input to further identify dog breeds.
 
 Additionally, a web application is developed that makes use of trained models. Provided an image as input identifies if a human or dog is present. If Dog is present, it identifies the dog's breed. If human is present, it identifies what dog breed does the human resemble.
@@ -31,6 +31,12 @@ python app.py
 ```
 By default, the app runs at http://0.0.0.0:3001/
 
+
+## Problem Statement
+### Identification of dog breeds
+### Description: 
+The project targets to deliver an analysis of various approaches to develop models for the classification of various dog breeds present in an input image. Addiotianally, due to the integration of tranfer learning, the model is expected to have efficient and accurate classification using limited resources and training time.
+At project will also include a webapplication for the purpose of demostration.
 
 ## Dataset
 Dog images to train model can be found at following:
