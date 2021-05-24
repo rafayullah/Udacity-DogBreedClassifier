@@ -93,7 +93,7 @@ Model achieved an accuracy of above 40%.
 #### c: Transfer lerning using InceptionV3
 InceptionV3 is also used as pretrained model to calculate bottleneck featues which is then fed to a second model consisting of GlobalAveragePooling layer following two fully connected dense layers with dropout to predict 133 dog breeds.
 Model achieved an accuracy of above 80%.
-#### Step 4: Final prediction
+### Step 4: Final prediction
 The final function that is used to predict dog breeds works in following way:
 1. Detects if the provided image is either a human, dog or has an absence of both of these
 2. If dog is detected, a predicted breed is returned
