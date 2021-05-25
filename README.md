@@ -59,8 +59,10 @@ Characteristics (visualized in the next section):
 ## Data Visualisation 
 1. The dataset contains some breeds that very closely resemble each other. Even humans will find it difficult to tell the difference between the two dog classes in some categories. An example is shown below:
 - Brittany Breed
+
 ![Brittany_breed](https://github.com/rafayullah/Udacity-DogBreedClassifier/blob/main/images/Brittany_02625.jpg?raw=true)
 - Welsh Springer Spaniel Breed
+
 ![Welsh_springer_spaniel](https://github.com/rafayullah/Udacity-DogBreedClassifier/blob/main/images/Welsh_springer_spaniel_08203.jpg?raw=true)
 
 2. Some of the breeds like Labrador have different variants of colours like yellow, dark brown and black:
