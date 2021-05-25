@@ -28,10 +28,8 @@ python app.py
 ```
 By default, the app runs at http://0.0.0.0:3001/
 
-## Application Dashboard
-App main page:
+## Web Application Dashboard
 ![Main page](https://github.com/rafayullah/Udacity-DogBreedClassifier/blob/main/images/Dashboard_Image.png?raw=true)
-
 
 
 
@@ -60,12 +58,10 @@ Characteristics (visualized in the next section):
 
 ## Data Visualisation 
 1. The dataset contains some breeds that very closely resemble each other. Even humans will find it difficult to tell the difference between the two dog classes in some categories. An example is shown below:
-
+- Brittany Breed
 ![Brittany_breed](https://github.com/rafayullah/Udacity-DogBreedClassifier/blob/main/images/Brittany_02625.jpg?raw=true)
-Brittany Breed
-
+- Welsh Springer Spaniel Breed
 ![Welsh_springer_spaniel](https://github.com/rafayullah/Udacity-DogBreedClassifier/blob/main/images/Welsh_springer_spaniel_08203.jpg?raw=true)
-Welsh Springer Spaniel Breed
 
 2. Some of the breeds like Labrador have different variants of colours like yellow, dark brown and black:
 ![Labrador colours](https://github.com/rafayullah/Udacity-DogBreedClassifier/blob/main/images/Labrador_Colours.png?raw=true)
@@ -83,7 +79,6 @@ Since we are dealing with a multi-classification problem here and the data is sl
     * b: Transfer learning using VGG16
     * c: Transfer learning using InceptionV3
 * Step 4: Final prediction
-* Findings
 
 ### Step 1: Detect Human
 OpenCV's implementation of:
@@ -105,14 +100,14 @@ We could have used the above-mentioned ResNet based model for detecting the huma
 ### Step 3: Compare performance of different CNNs architectures to classify Dog Breeds 
 Now that we have identified that if a dog or human is present in the image or not, the next step is to identify its breed. CNN's are used for this purpose.
 Following are the experimentations performed:
-#### a: CNN From Scratch
+a. CNN From Scratch
 A CNN model is built from scratch with the following architecture.
 A model having 4 convolutional layers following maxpool layers was trained for 20 epochs. 
 The model achieved an accuracy of above 10%.
-#### b: Transfer learning using VGG16
+b. Transfer learning using VGG16
 To reduce training time without sacrificing accuracy, transfer learning is used. VGG16 is used as a pre-trained model to obtain bottleneck features of each input image. A new model is created and trained to consist of GlobalAveragePooling layer and the final Dense layer to predict 133 dog breeds. 
 The model achieved an accuracy of above 40%.
-#### c: Transfer learning using InceptionV3
+c. Transfer learning using InceptionV3
 InceptionV3 is also used as a pre-trained model to calculate bottleneck features which are then fed to a second model consisting of GlobalAveragePooling layer following two fully connected dense layers with dropout to predict 133 dog breeds.
 The model achieved an accuracy of above 80%.
 
@@ -131,6 +126,8 @@ I have used the pretrained InceptionV3 model on ImageNet for this task.
 ![Model results](https://github.com/rafayullah/Udacity-DogBreedClassifier/blob/main/images/Final_Arch.png?raw=true)
 
 - A dropout of 0.4 is selected to avoid model overfitting sacrificing model's performance on test set
+- Model is finally compiled with categorical_crossentropy loss function due to being a multi-class classification
+- Model is trained for 20 epocs
 - The model achieves an accuracy of above 80% on 836 test dog images
 
 
@@ -139,12 +136,13 @@ To the images provided as an input to our model, we were returned with the follo
 ![Model results](https://github.com/rafayullah/Udacity-DogBreedClassifier/blob/main/images/Model_Results.png?raw=true)
 
 - In the first car image, the model is clearly able to distinguish the absense of human or a dog present
-- In the second image, the model identifies the image to be a human and returns a dog breed that it resemble to:
+- In the second image, the model identifies the image to be a human and returns a dog breed that it resembles:
 ![Icelandic sheepdog](https://github.com/rafayullah/Udacity-DogBreedClassifier/blob/main/images/Icelandic_sheepdog.jpg?raw=true)
 - In the third image, provided an image of a Rottweiler, the model confuses it with Beauceron:
 ![Beauceron](https://github.com/rafayullah/Udacity-DogBreedClassifier/blob/main/images/Beauceron.jpg?raw=true)
+
 We can clearly see the resemblance between the two breeds
-- In the fourth image, the model identifies the cat to be a strongly resembling dog with the following breed
+- In the fourth image, the model identifies the cat to be a strongly resembling dog's breed Affenpinscher
 - In the last image, the model correctly identifies an English cocker spaniel
 
 Considering the random guess has a probablity of <1% to be correct, with and accuracy of 84% our model has performed really well.
